@@ -1,0 +1,70 @@
+<app-header></app-header>
+
+<main>
+    <div class="container">
+        <div class="row" id="formularioTest">
+            <div class="col-12">
+                <form id="testForm">
+                    <div class="col-12">
+                        <div class="col-8 col-md-10">
+                            <div id="textoTest">
+
+                                <h5><strong>Test de entorno</strong></h5>
+
+
+                            </div>
+                            <label for="primeraPregunta" class="form-label">¿Qué tan importante es para ti estar
+                                cerca de una ciudad grande o capital?</label>
+                            <select class="form-select" id="primeraPregunta" required>
+                                <option selected value="A">A. Muy importante.</option>
+                                <option value="B">B. No tan importante.</option>
+                                <option value="C">C. Nada importante.</option>
+
+                            </select>
+                        </div>
+                        <div class="col-8 col-md-10">
+                            <label for="segundaPregunta" class="form-label">¿Qué estilo de vida prefieres?</label>
+                            <select class="form-select" id="segundaPregunta" required>
+                                <option selected value="A">A. Tranquilo, paz y relajación.</option>
+                                <option value="B">B. Deportivo, cerca a centros de deporte.</option>
+                                <option value="C">C. Juvial, alegre y social.</option>
+                            </select>
+                        </div>
+                        <div class="col-8 col-md-10">
+                            <label for="terceraPregunta" class="form-label">¿Para qué usarías el lote
+                                principalmente?</label>
+                            <select class="form-select" id="terceraPregunta" required>
+                                <option selected value="A">A. Vivienda permanente.</option>
+                                <option value="B">B. Recreacional.</option>
+                                <option value="C">C. Inversión o proyecto.</option>
+                            </select>
+                        </div>
+                        <div class="col-8 col-md-10">
+                            <label for="cuartaPregunta" class="form-label">¿Qué tan importante es para ti tener
+                                contacto directo con la naturaleza en tu día a día?</label>
+                            <select class="form-select" id="cuartaPregunta" required>
+                                <option selected value="A">A. Me encanta.</option>
+                                <option value="B">B. Me gusta.</option>
+                                <option value="C">C. Prefiero algo más urbano.</option>
+                            </select>
+                        </div>
+                        <div class="col-8 col-md-10">
+                            <label for="quintaPregunta" class="form-label">¿Qué tipo de clima y ambiente
+                                prefieres?</label>
+                            <select class="form-select" id="quintaPregunta" required>
+                                <option selected value="A">A. Templado.</option>
+                                <option value="B">B. Cálido.</option>
+                                <option value="C">C. Mixto.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<app-footer></app-footer>

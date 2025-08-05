@@ -1,0 +1,83 @@
+div.carousel-item img {
+  position: absolute;
+  height: 80%;
+  top: 0;
+  width: auto;
+  left: 50%;
+  object-fit: cover;
+  transform: translateX(-50%);
+  margin-top: 10%;
+}
+
+main {
+  margin-top: 100px;
+}
+
+#tituloIndividual {
+  margin-top: 60px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.carousel-item {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+div.descripcionLugar {
+  margin-bottom: 100px;
+}
+
+div#individualCarrusel button {
+  height: 80%;
+  margin-top: 9.9%;
+  width: 10%;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+table {
+  margin-bottom: 80px !important;
+  border: 0;
+}
+
+table tr {
+  border: 0;
+}
+
+table td {
+  border: 0;
+}
+
+#listaLugares div.dropdown {
+  margin-top: 60px !important;
+}
+
+#listaLugares div.dropdown a {
+  background-color: #003333;
+  color: white !important;
+}
+div.lugarTitulo {
+  margin-top: -150px !important;
+}
+#listaLugares div.dropdown ul {
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  div.individualCarrusel {
+    margin-bottom: -80px !important;
+  }
+
+  div.lugarTitulo {
+    margin-top: -150px !important;
+  }
+
+  table {
+    display: none;
+  }
+}

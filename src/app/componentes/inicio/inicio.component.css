@@ -1,0 +1,36 @@
+.inicio {
+  width: 40%;
+  margin-left: calc(30%);
+  padding: 20px;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  background-color: #109471cc !important;
+  border-radius: 20px;
+}
+
+button,
+a {
+  background-color: #003333;
+  border: black;
+  margin-right: 10px;
+}
+
+#titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 720px) {
+  .inicio {
+    width: 60%;
+    margin-left: calc(20%);
+  }
+
+  button,
+  a {
+    margin-bottom: 10px;
+  }
+}

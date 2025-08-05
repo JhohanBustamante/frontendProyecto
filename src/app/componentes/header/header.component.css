@@ -1,0 +1,56 @@
+header button{
+  background-color: #06A77D !important;
+}
+
+header {
+  background-color: #003333 !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+
+
+@media (min-width:992px){
+  header ul.navbar-nav a{
+    margin-left: 50px;
+  }
+
+}
+
+header nav.navbar {
+  background-color: var(--colorPrincipal) !important;
+  padding: 0px;
+}
+
+header nav.navbar a{
+  color: white !important;
+}
+
+button {
+  background: #778575;
+  color: #7580736c;
+}
+
+#logoDos {
+  width: 80px;
+  height: 80px;
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px;
+  margin-right: 40px;
+}
+
+@media(max-width:576px){
+  header{
+    width: 100%;
+  }
+  #tituloHeader{
+    margin-left: -240px;
+    margin-right: -250px;
+  }
+}
+
+

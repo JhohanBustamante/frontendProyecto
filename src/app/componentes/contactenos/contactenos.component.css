@@ -1,0 +1,124 @@
+div.contRow {
+  margin-top: 120px;
+}
+
+main button {
+  background: #003333 !important;
+}
+
+div.contRow div.card {
+  height: 250px;
+  margin-top: calc(50% - 125px);
+  width: 300px !important;
+}
+
+div.contRow div.form {
+  height: 370px;
+  margin-top: 30px;
+  width: 800px !important;
+  background-color: #06a77d;
+  border: solid 1.2px rgba(68, 219, 126, 0.842);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+div.sedes {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+div.sedes h4 {
+  margin-left: calc(50% - 70px);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+div.sedes div.sede div.card {
+  width: 300px !important;
+  margin-left: calc(50% - 125px);
+}
+
+div.sede div.card {
+  height: 620px;
+  background-color: #06a77d;
+}
+
+div.sede img {
+  height: 400px;
+  object-fit: cover;
+}
+
+#cartaTest {
+  margin-left: calc(50% - 150px) !important;
+  background-color: #06a77d;
+}
+
+#formContacto {
+  margin-left: calc(50% - 390px);
+}
+
+#comentarioContacto input {
+  padding: 20px;
+}
+
+@media (max-width: 1199px) {
+  div#cartaTest {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  div#cartaTest {
+    margin-top: 0;
+  }
+
+  div.sede {
+    margin-top: 30px;
+  }
+
+  div.card {
+    margin-left: calc(50% - 150px) !important;
+  }
+
+  div.imparCardSede {
+    margin-left: calc(100% - 150px) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  div.contRow div.form {
+    width: 600px !important;
+    margin-left: calc(50% - 300px) !important;
+    height: 420px;
+  }
+
+  div.imparCardSede {
+    margin-left: calc(100% - 150px) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  div.imparCardSede {
+    margin-left: calc(50% - 150px) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  div.contRow div.form {
+    width: 400px !important;
+    margin-left: calc(50% - 190px) !important;
+    height: 500px;
+  }
+
+  div.contRow div.form label {
+    margin-right: 100px;
+  }
+
+  div.form input {
+    margin-left: 30px;
+  }
+
+  div.imparCardSede {
+    margin-left: calc(50% - 150px) !important;
+  }
+}

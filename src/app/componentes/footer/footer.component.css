@@ -1,0 +1,59 @@
+footer {
+  background-color: #003333;
+  padding-bottom: 50px;
+  margin-top: 100px;
+}
+
+#logoDosFooter {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  padding: 0px;
+  margin: 0px;
+  margin-right: -60px;
+  margin-left: calc(50% - 50px);
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+footer div.card{
+  border:0;
+  height: 300px !important;
+  width: 250px !important;
+  margin-left: calc(50% - 125px);
+  margin-top: 40px;
+}
+
+div#cardTresFoot a{
+  text-decoration: none !important;
+  color: black;
+  font-weight: 600;
+}
+
+div#cardDosFoot a{
+  margin-top: 50px;
+  border: black;
+  background-color: #06A77D !important;
+}
+
+div#cardDosFoot h5{
+  margin-top: 50px;
+  margin-bottom: 30px
+}
+
+div#cardTresFoot h5{
+  margin-top: 50px;
+}
+
+@media(max-width:768px){
+  footer div.row{
+    width: 100%;
+    padding: 0;
+    margin: 10px, 0, 0, 0;
+  }
+}
+
+footer div.row div.card {
+  width: 250px !important;
+  margin-left: calc(50% - 125px) !important;
+}

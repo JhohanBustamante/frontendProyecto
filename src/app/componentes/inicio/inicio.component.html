@@ -1,0 +1,18 @@
+<app-header></app-header>
+
+<div class="inicio">
+  <div class="mb-6" id="titulo">
+    <h5> Inicio de sesión </h5>
+  </div>
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Usuario</label>
+    <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" [(ngModel)]="correo">
+  </div>
+   <div class="mb-3">
+    <label for="contrasena" class="form-label">Contraseña</label>
+    <input type="password" class="form-control" id="contrasena" [(ngModel)]="contrasena">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="iniciar()" >Iniciar</button>
+  <a type="button" class="btn btn-primary" routerLink="/registro"> Registrarse </a>
+</div>
+<app-footer></app-footer>

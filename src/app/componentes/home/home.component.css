@@ -1,0 +1,166 @@
+div.carousel-item img {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: auto;
+  left: 50%;
+  object-fit: cover;
+  transform: translateX(-50%);
+}
+
+.cardEquipo{
+  background-color: #06A77D !important;
+}
+
+div.carousel-item {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.cardLugares a, button {
+  background-color: #003333;
+  border: black;
+}
+
+div.row form {
+  background-color: #06A77D ;
+  padding: 50px;
+}
+
+div.row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+body div.accordion-item button{
+  color: white !important;
+}
+
+body div.accordion-item button:hover{
+  color: white !important;
+  font-weight: bold !important;
+  scale: 1.015;
+}
+
+div.cartas div.card {
+  height: 370px;
+  width: 320px !important;
+  margin-left: calc(50% - 160px);
+}
+
+div.cartas div.card img {
+  height: 170px !important;
+}
+
+div.botonDesplegable button {
+  background-color: #06A77D ;
+}
+
+.cardLugares {
+  margin-top: calc(50%);
+  width: 500px;
+  background-color: #06A77D ;
+}
+
+#tituloDos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+#tituloLugares {
+  margin-top: 50px;
+  margin-bottom: -100px;
+}
+
+div.equipo {
+  position: relative;
+  overflow: hidden;
+  height: 30vh;
+}
+
+div.equipo img {
+  width: 100%;
+  height: 30vh;
+  position: absolute;
+  object-fit: cover;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+div.cardLugares{
+  margin-bottom: 20px;
+  height: 380px !important;
+}
+
+div.cardEquipo {
+  height: 420px !important;
+  width: 300px !important;
+}
+
+div.cardEquipo img.card-img-top {
+  height: 200px;
+}
+
+
+
+@media (max-width: 991px) and (min-width: 768px) {
+  div.cardLugares {
+    margin-bottom: 30px;
+  }
+
+  #cartaTest{
+    margin-top: 0px;
+    width: 320px !important;
+    margin-left: calc(50% - 160px);
+    margin-bottom: 20px
+  }
+
+  div#valeriaCard{
+    margin-top: 20px;
+    margin-left: calc(50% - 150px) !important
+  }
+  div.cardEquipoCont{
+        margin-left: calc(50% - 150px) !important
+  }
+}
+
+@media (max-width: 767px) {
+  div.cardLugares {
+    margin-bottom: 30px;
+  }
+
+  div.imparCard {
+    display:none;
+  }
+
+  #cartaTest{
+    margin-top: 0px;
+    width: 320px !important;
+    margin-left: calc(50% - 160px);
+    margin-bottom: 20px
+  }
+
+  div.cardEquipo{
+    width: 300px !important;
+    margin-left: calc(50% - 150px);
+    margin-bottom: 20px;
+  }
+
+  #comentarioContacto input{
+    padding: 15px;
+    margin-left: 17px;
+  }
+}
+
+@media (max-width: 575px){
+  #comentarioContacto input{
+    margin-left: 0;
+  }
+}
+
+div#carruselPrincipal button{
+  background-color:  #00333375 !important;
+}

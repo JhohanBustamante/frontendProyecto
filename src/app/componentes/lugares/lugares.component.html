@@ -1,0 +1,98 @@
+<app-header></app-header>
+
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-sm-8">
+                <h2 id="tituloIndividual" class="tituloBD">
+                    {{ misDatos.titulo }}
+                </h2>
+            </div>
+            <div class="col-6 col-sm-4" id="listaLugares">
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Lugares
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/lugares/aca01">Acacías</a></li>
+                        <li><a class="dropdown-item" href="/lugares/gua01">Guamal</a></li>
+                        <li><a class="dropdown-item" href="/lugares/gra01">Granada</a></li>
+                        <li><a class="dropdown-item" href="/lugares/vil01">Villavicencio</a></li>
+                        <li><a class="dropdown-item" href="/lugares/chi01">Chichimene</a></li>
+                        <li><a class="dropdown-item" href="/lugares/por01">Porfía</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="individualCarrusel" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item" id="lugarImgUno">
+                        <img src="images/acaciasCuatro.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item active" id="lugarImgDos">
+                        <img src="images/acaciasDos.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#individualCarrusel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#individualCarrusel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="lugarTitulo">
+                <h4 class="subtituloBD">
+                    {{misDatos.subtitulo}}
+                </h4>
+            </div>
+            <div class="col-12 descripcionLugar" id="lugarDescripcion">
+                <p class="descripcionBD">
+                    {{misDatos.descripcion}}
+                </p> <br><br>
+                <p>
+                    Cualidades:
+                </p>
+                <ul>
+                    <ng-component *ngIf="misDatos.listaUno !=='' ">
+                        <li class="listaUnoBD">
+                            {{misDatos.listaUno}}
+                        </li>
+                    </ng-component>
+                    <li class="listaDosBD" *ngIf="misDatos.listaDos !=='' ">
+                        {{misDatos.listaDos}}
+
+                    </li>
+                    <li class="listaTresBD" *ngIf="misDatos.listaTres !=='' ">
+                        {{misDatos.listaTres}}
+
+                    </li>
+                    <li class="listaCuatroBD" *ngIf="misDatos.listaCuatro !=='' ">
+                        {{misDatos.listaCuatro}}
+
+                    </li>
+                    <ng-component *ngIf="misDatos.listaCinco !== '' ">
+                        <li class="listaCincoBD">
+                            {{misDatos.listaCinco}}
+                        </li>
+                    </ng-component>
+
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+</main>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,110 @@
+<app-header></app-header>
+
+<main>
+    <div class="container">
+
+        <div class="row">
+            <div class="row primerRow contRow">
+                <div class="col-12 col-xl-4">
+                    <div id="cartaTest" class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">¿Dónde quieres vivir?</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">Test de entorno ideal.</h6>
+                            <p class="card-text">Hemos realizado un pequeño <br> test para recomendarte los mejores
+                                lugares.
+                            </p>
+                            <a routerLink="/test" target="_blank"><button type="button"
+                                    class="btn btn-primary">Test</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-8">
+                    <div class="form" id="formContacto">
+                        <h5>¿Estás interesado en algún lugar?</h5>
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Tu nombre</label>
+                            <div class="col-8 col-md-6">
+                                <input type="email" class="form-control" id="inputEmail3">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Teléfono</label>
+                            <div class="col-8 col-md-6">
+                                <input type="text" class="form-control" id="inputPassword3">
+                            </div>
+                        </div>
+                        <div class="row mb-3" id="comentarioContacto">
+                            <label for="comentario" class="col-sm-2 col-form-label">Comentario</label>
+                            <div class="col-9 col-md-9">
+                                <input type="text" class="form-control" name="comentario" id="comentario">
+                            </div>
+                        </div>
+                        <fieldset class="row mb-3">
+                            <legend class="col-form-label col-sm-2 pt-0">Interés</legend>
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                        value="opcionUno" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                        Correo
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
+                                        value="opcionDos">
+                                    <label class="form-check-label" for="gridRadios2">
+                                        Whatsapp
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row sedes">
+            <div class="col-12">
+
+                <h4>Nuestras sedes</h4>
+            </div>
+            <div class="sede col-12 col-md-6 col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="images/sedeUno.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">📍 Sede Principal – Bogotá <br>
+                            📌 Av. Calle 100 #19-55, Usaquén, Bogotá D.C. <br>
+                            🕒 Lunes a viernes: 8:00 a.m. – 5:30 p.m. <br>
+                            📞 Atención personalizada para compradores y permutas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sede col-12 col-md-6 col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="images/sedeDos.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">📍 Sede Regional – Medellín <br>
+                            📌 Cra. 43A #1-50, El Poblado, Medellín <br>
+                            🕒 Lunes a sábado: 9:00 a.m. – 6:00 p.m. <br>
+                            📞 Especialistas en lotes residenciales y rurales.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sede col-12 col-md-6 col-lg-4">
+                <div class="card imparCardSede" style="width: 18rem;">
+                    <img src="images/sedeTres.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">📍 Sede Norte – Barranquilla <br>
+                            📌 Calle 76 #54-38, Alto Prado, Barranquilla <br>
+                            🕒 Lunes a viernes: 8:30 a.m. – 5:00 p.m. <br>
+                            📞 Consultas, asesorías y atención a inversionistas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="registro col-12 col-md-6">
+  <div class="mb-3 col-9" id="titulo">
+    <h5>Registrar Lugar</h5>
+  </div>
+  <div class="mb-3 col-9">
+    <label for="nombre" class="form-label">Titulo</label>
+    <input type="text" class="form-control" aria-describedby="emailHelp" [(ngModel)]="titulo">
+  </div>
+  <div class="mb-3 col-9">
+    <label for="entradaDos" class="form-label">Subtitulo</label>
+    <input type="text" class="form-control" aria-describedby="emailHelp" [(ngModel)]="subtitulo">
+  </div>
+  <div class="mb-3 col-9">
+    <label for="cedula" class="form-label">Descripción</label>
+    <input type="text" class="form-control" aria-describedby="emailHelp" [(ngModel)]="descripcion">
+  </div>
+  <div class="mb-3 col-9">
+    <label for="correo" class="form-label">Lista 1</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" [(ngModel)]="listaUno">
+  </div>
+   <div class="mb-3 col-9">
+    <label for="correo" class="form-label">Lista 2</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" [(ngModel)]="listaDos">
+  </div>
+   <div class="mb-3 col-9">
+    <label for="correo" class="form-label">Lista 3</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" [(ngModel)]="listaTres">
+  </div>
+   <div class="mb-3 col-9">
+    <label for="correo" class="form-label">Lista 4</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" [(ngModel)]="listaCuatro">
+  </div>
+   <div class="mb-3 col-9">
+    <label for="correo" class="form-label">Lista 5</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" [(ngModel)]="listaCinco">
+  </div>
+  <div class="mb-3 col-9">
+    <label for="correo" class="form-label">Código</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" [(ngModel)]="codigo">
+  </div>
+  
+  <button type="submit" class="btn btn-primary" (click)="registrar()">Enviar</button>
+
+</div>
+<app-footer></app-footer>
