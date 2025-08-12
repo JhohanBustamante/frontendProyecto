@@ -8,6 +8,7 @@ import { MisionComponent } from './componentes/mision/mision.component';
 import { LugaresComponent } from './componentes/lugares/lugares.component';
 import { TestComponent } from './componentes/test/test.component';
 import { RegistroLugaresComponent } from './componentes/registro-lugares/registro-lugares.component';
+import { HomeAdminComponent } from './componentes/home-admin/home-admin.component';
 
 export const routes: Routes = [
     { path: "activar/:correo/:codigo", component: ActivarComponent, pathMatch: "full" },
@@ -20,4 +21,5 @@ export const routes: Routes = [
     { path: "mision", component: MisionComponent, pathMatch: "full" },
     { path: "lugares/:codigo", component: LugaresComponent, pathMatch: "full" },
     { path: "test", component: TestComponent, pathMatch: "full" },
+    {path: "admin", component: HomeAdminComponent, pathMatch: "full"}
 ];

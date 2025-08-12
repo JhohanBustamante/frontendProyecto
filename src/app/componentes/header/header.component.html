@@ -18,6 +18,11 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/contactenos"> Contáctanos </a>
           </li>
+          <ng-container *ngIf="nombre != '' && nombre != undefined && nombre != null">
+            <li class="nav-item">
+            <a class="nav-link" routerLink="/registroLugar"> Administracion </a>
+            </li>
+          </ng-container>
         </ul>
       </div>
     </div>

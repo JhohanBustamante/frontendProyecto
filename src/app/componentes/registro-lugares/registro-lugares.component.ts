@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { PeticionService } from '../../servicios/peticion.service';
 import Swal from 'sweetalert2';
+import { AdministracionComponent } from "../administracion/administracion.component";
+import { HomeAdminComponent } from "../home-admin/home-admin.component";
 
 @Component({
   selector: 'app-registro-lugares',
-  imports: [HeaderComponent, FooterComponent, FormsModule],
+  imports: [HeaderComponent, FooterComponent, FormsModule, AdministracionComponent, HomeAdminComponent],
   templateUrl: './registro-lugares.component.html',
   styleUrl: './registro-lugares.component.css'
 })
@@ -62,7 +64,7 @@ constructor(private peticion: PeticionService, private router: Router) { }
       })
     }
 
-    nombre: string = "Cargando"
+  nombre: string = "Cargando"
   rol: string = "Cargando"
 
   ngOnInit(): void {

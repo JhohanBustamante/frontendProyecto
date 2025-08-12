@@ -1,47 +1,15 @@
-.registro {
-    width: 60%;
-    margin-left: calc(20%);
-    padding: 10px;
-    margin-bottom: 50px;
-    background-color: #109471cc !important;
-    border-radius: 20px;
-}
-
-a, button {
-    background-color: #003333 ;
-    margin-left: calc(12.5%);
-    margin-bottom: 10px;
-}
-
-.mb-3 {
-    margin-left: calc(12.5%);
-}
-
-#titulo {
-    margin-top: 35px;
-    margin-bottom: 40px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@media(max-width: 540px){
-    .registro {
-    padding: 5px;
-}
-
-}
-
 .barraLateral {
     position: fixed;
     z-index: 1000;
 
 }
 
-.main{
+.mainAdmin{
+    margin-top: 79px;
     display: flex;
     margin-bottom: 100px;
     z-index: 1000 !important;
+    margin-left: 2px;
 }
 
 nav{

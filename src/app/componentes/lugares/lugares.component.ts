@@ -7,11 +7,12 @@ import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { PeticionService } from '../../servicios/peticion.service';
 import { ChangeDetectorRef } from '@angular/core';
+import { HomeAdminComponent } from "../home-admin/home-admin.component";
 
 
 @Component({
   selector: 'app-lugares',
-  imports: [HeaderComponent, FooterComponent, CommonModule, FormsModule, ɵEmptyOutletComponent, RouterModule],
+  imports: [HeaderComponent, FooterComponent, CommonModule, FormsModule, ɵEmptyOutletComponent, RouterModule, HomeAdminComponent],
   templateUrl: './lugares.component.html',
   styleUrl: './lugares.component.css'
 })

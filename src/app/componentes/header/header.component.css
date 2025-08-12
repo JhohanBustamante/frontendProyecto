@@ -10,9 +10,6 @@ header {
   z-index: 1000;
 }
 
-
-
-
 @media (min-width:992px){
   header ul.navbar-nav a{
     margin-left: 50px;

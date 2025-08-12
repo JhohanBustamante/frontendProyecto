@@ -1,0 +1,49 @@
+main{
+    position: fixed;
+    z-index: 1000;
+    margin-top: calc(50vh - 175px);
+}
+
+nav{
+    background-color: gray;
+    display: block;
+    width: 70px;
+    margin-left: 15px;
+    border-radius: 10px;
+    height: 350px;
+}
+
+.derecha{
+    margin-left: 70px !important;
+    margin-top: -35px !important;
+}
+
+.edit{
+    margin-top: -55px !important;
+}
+
+.icono img {
+    width: 45px !important;
+    height: 45px !important;
+    margin-top: 20px;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 12.5px;
+}
+
+.editar img{
+    margin-bottom: 20px !important;
+}
+
+.dropdown-menu{
+    background-color: gray;
+}
+
+.dropdown-menu li a{
+    color: white;
+    font-weight: 550;
+}
+
+.dropdown-menu li a:hover{
+    background-color: rgba(0, 0, 0, 0.237) ;
+}
