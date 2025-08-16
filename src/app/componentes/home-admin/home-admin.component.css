@@ -1,7 +1,7 @@
 main{
     position: fixed;
     z-index: 1000;
-    margin-top: calc(50vh - 175px);
+    top: 150px !important;
 }
 
 nav{
@@ -10,16 +10,16 @@ nav{
     width: 70px;
     margin-left: 15px;
     border-radius: 10px;
-    height: 350px;
-}
-
-.derecha{
-    margin-left: 70px !important;
-    margin-top: -35px !important;
+    height: 440px;
 }
 
 .edit{
-    margin-top: -55px !important;
+    margin-top: -30px !important;
+}
+
+.derecha{
+    margin-left: 68px !important;
+    margin-top: -45px !important;;
 }
 
 .icono img {
@@ -31,9 +31,15 @@ nav{
     margin-left: 12.5px;
 }
 
-.editar img{
+.icono img:hover{
+    transform: scale(1.3);
+}
+
+.salir img{
+    margin-top: 50px;
     margin-bottom: 20px !important;
 }
+
 
 .dropdown-menu{
     background-color: gray;
@@ -43,7 +49,6 @@ nav{
     color: white;
     font-weight: 550;
 }
-
-.dropdown-menu li a:hover{
-    background-color: rgba(0, 0, 0, 0.237) ;
+.dropdown-item:hover{
+    background-color: rgba(0, 0, 0, 0.4);
 }

@@ -1,45 +1,47 @@
 <app-header></app-header>
 <app-home-admin></app-home-admin>
 
-<div class="col-2">
-    <app-administracion></app-administracion>
-</div>
-
-<div class="registro col-10 col-md-6">
+<div class="registro">
     <main>
         <div class="container">
-            <div class="row">
-                <div class="entrada">
-                    <label for="titulo">
-                        <h5>
-                            Titulo
-                        </h5>
-                    </label>
-                    <input id="tituloInput" type="text">
-                </div>
-                <div>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Ajustar producto
-                    </button>
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Rol</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ajustar producto</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal"> Cerrar </button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
+                    <ng-container *ngFor="let item of datos">
+                        <tr>
+                            <td>{{item.nombre}}</td>
+                            <td>{{item.correo}}</td>
+                            <td>{{item.rol}}</td>
+                            <td>{{item.estado}}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+            <div type="button" class="btnNuevo" (click)="agregar()">
+                <img src="iconos/mas.png">
+            </div>
+            <div class="modal fade" id="aniadirModal" tabindex="-1" aria-labelledby="aniadir"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="aniadir">Agregar usuario</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
