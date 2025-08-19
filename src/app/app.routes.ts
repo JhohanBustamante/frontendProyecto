@@ -9,6 +9,8 @@ import { LugaresComponent } from './componentes/lugares/lugares.component';
 import { TestComponent } from './componentes/test/test.component';
 import { RegistroLugaresComponent } from './componentes/registro-lugares/registro-lugares.component';
 import { HomeAdminComponent } from './componentes/home-admin/home-admin.component';
+import { MisDatosComponent } from './componentes/mis-datos/mis-datos.component';
+import { ActualizarContrasenaComponent } from './componentes/actualizar-contrasena/actualizar-contrasena.component';
 
 export const routes: Routes = [
     { path: "activar/:correo/:codigo", component: ActivarComponent, pathMatch: "full" },
@@ -21,5 +23,9 @@ export const routes: Routes = [
     { path: "mision", component: MisionComponent, pathMatch: "full" },
     { path: "lugares/:codigo", component: LugaresComponent, pathMatch: "full" },
     { path: "test", component: TestComponent, pathMatch: "full" },
-    {path: "admin", component: HomeAdminComponent, pathMatch: "full"}
+    {path: "admin", component: HomeAdminComponent, pathMatch: "full"},
+    {path: "misDatos", component: MisDatosComponent, pathMatch: "full"},
+    {path: "actualizarCont", component: ActualizarContrasenaComponent, pathMatch: "full"}
+
+
 ];

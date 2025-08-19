@@ -4,23 +4,23 @@
         <div class="icono barra">
             <a routerLink="/home"><img src="iconos/barra-de-navegacion.png"></a>
         </div>
-        <div class="icono home" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="icono home" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="rol=='Administrador'">
             <img src="iconos/hogar.png">
         </div>
         <ul class="dropdown-menu mt-2 derecha"> 
             <li><a class="dropdown-item" routerLink="/registroLugar">Usuarios</a></li>
-            <li><a class="dropdown-item" href="#">Opción 2</a></li>
-            <li><a class="dropdown-item" href="#">Opción 3</a></li>
+            <li><a class="dropdown-item" href="#">Lugares</a></li>
+            <li><a class="dropdown-item" href="#">Lotes</a></li>
         </ul>
         <div class="icono archivo" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="iconos/bandeja-de-entrada.png">
         </div>
         <ul class="dropdown-menu mt-2 derecha"> 
-            <li><a class="dropdown-item" href="#">Opción 1</a></li>
-            <li><a class="dropdown-item" href="#">Opción 2</a></li>
+            <li><a class="dropdown-item" routerLink="/misDatos">Mis datos</a></li>
+            <li><a class="dropdown-item" routerLink="/actualizarCont">Actualizar contrasena</a></li>
             <li><a class="dropdown-item" href="#">Opción 3</a></li>
         </ul>
-        <div class="icono grafico" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="icono grafico" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="rol=='Administrador'">
             <img src="iconos/tendencia.png">
         </div>
         <ul class="dropdown-menu mt-2 derecha"> 
@@ -28,7 +28,7 @@
             <li><a class="dropdown-item" href="#">Opción 2</a></li>
             <li><a class="dropdown-item" href="#">Opción 3</a></li>
         </ul>
-        <div class="icono editar" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="icono editar" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="rol=='Administrador'">
             <img src="iconos/edicion-de-fotos.png">
         </div>
         <ul class="dropdown-menu mt-2 derecha edit"> 

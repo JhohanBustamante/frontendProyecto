@@ -1,0 +1,30 @@
+div.areaDos {
+    margin-left: calc(50% - 16.5%);
+    background-color: #003333;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    border-radius: 10px;
+
+}
+
+div.titulo{
+    font-weight: 650;
+    margin-bottom: 40px;
+    width: 220px;
+    margin-left: calc(50% - 110px);
+    font-size: 20px;
+}
+
+input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+div.area{ 
+    margin-top: 120px;
+}
+
+button{
+    right: 0 !important;
+}
+

@@ -1,0 +1,24 @@
+<app-header></app-header>
+<app-home-admin></app-home-admin>
+
+<div class="area">
+    <div class="container">
+        <div class="contrasenaCambio">
+            <div class="titulo"> Mis datos </div>
+            <div class="row">
+                <div class="form-group col-12 col-md-4 areaDos"> 
+                    <label for="correo"> Correo</label>
+                    <input type="text" id="correo" class="form-control" aria-describedby="passwordHelpInline" [disabled]="true" [(ngModel)]="correo">
+                    <label for="nombre"> Nombre</label>
+                    <input type="text" id="nombre" class="form-control" aria-describedby="passwordHelpInline" [(ngModel)]="nombre">
+                    <label for="rol"> Rol</label>
+                    <input type="text" id="rol" class="form-control" aria-describedby="passwordHelpInline" [disabled]="true" [(ngModel)]="rol">
+                    <label for="estado"> Estado</label>
+                    <input type="text" id="estado" class="form-control" aria-describedby="passwordHelpInline" [disabled]="true" [(ngModel)]="estado">
+                    <button type="button" class="btn btn-primary" (click)="cambiarNombre()">Actualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

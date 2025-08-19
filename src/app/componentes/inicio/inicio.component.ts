@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
-import { Inicio } from '../../interface/inicio';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PeticionService } from '../../servicios/peticion.service';
@@ -22,7 +21,7 @@ export class InicioComponent {
   contrasena: string = ""
   estado: boolean = false
 
-  iniciar() {
+  iniciar(){
     let post = {
       host: this.peticion.urlReal,
       path: "/usuario/iniciar",
