@@ -81,3 +81,11 @@ div.lugarTitulo {
     display: none;
   }
 }
+
+
+img.imagen {
+  width: 250px;
+  height: 250px;
+  margin-left: calc(50% - 125px);
+  margin-top: 100px;
+}

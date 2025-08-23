@@ -181,8 +181,6 @@ export class RegistroLugaresComponent implements OnInit {
     this.idSeleccionado = ""
   }
 
-  
-
   cargarTodas() {
     let post = {
       host: this.peticion.urlReal,
@@ -191,6 +189,7 @@ export class RegistroLugaresComponent implements OnInit {
       }
     }
     this.peticion.get(post.host + post.path).then((res: any) => {
+      console.log(res)
       this.datos = res.datos.datos
     })
   }

@@ -1,0 +1,91 @@
+<app-header></app-header>
+<app-home-admin></app-home-admin>
+
+<div class="registro">
+    <main>
+        <div class="container">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Subtitulo</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Lista</th>
+                        <th scope="col">Imagenes</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <ng-container *ngFor="let item of datos">
+                        <tr (click)="cargar(item._id)">
+                            <td>{{item.titulo}}</td>
+                            <td>{{item.subtitulo}}</td>
+                            <td>{{item.descripcion}}</td>
+                            <td>
+                            
+                            </td>
+                            <td>
+                                <img src="http://localhost:3000/imagenes/{{item._id}}.png?v={{random}}" class="imagen">
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+            <div type="button" class="btnNuevo" (click)="agregar()">
+                <img src="iconos/mas.png">
+            </div>
+            <div class="modal fade" id="aniadirModal" tabindex="-1" aria-labelledby="aniadir" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="aniadir">Agregar lugar</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="form-group col-12">
+                                    <input type="file" (change)="onFileSelected($event)">
+                                    <div class="btn btn-primary" (click)="subirImagen()">Subir</div>
+                                </div>  
+                                <div class="form-group col-12">
+                                    <label for="titulo" class="form-label">titulo</label>
+                                    <input type="text" class="form-control form-control-sm" id="titulo"
+                                        [(ngModel)]="titulo">
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <label for="subtitulo" class="form-label">subtitulo</label>
+                                    <input type="text" class="form-control form-control-sm" id="subtitulo"
+                                        [(ngModel)]="subtitulo">
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <label for="descripcion" class="form-label"> descripcion</label>
+                                    <input type="text" class="form-control form-control-sm" id="descripcion"
+                                        [(ngModel)]="descripcion">
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <label for="lista" class="form-label"> lista</label>
+                                    <input type="text" class="form-control form-control-sm" id="lista"
+                                        [(ngModel)]="lista">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" (click)="guardar()"
+                                *ngIf="idSeleccionado == ''">Guardar</button>
+                            <button type="button" class="btn btn-danger" (click)="eliminar()"
+                                *ngIf="idSeleccionado !== '' ">Eliminar</button>
+                            <button type="button" class="btn btn-primary" (click)="actualizar()"
+                                *ngIf="idSeleccionado !== '' ">Actualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<app-footer></app-footer>

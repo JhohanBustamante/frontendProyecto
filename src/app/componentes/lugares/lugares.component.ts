@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
-import { ActivatedRoute, RouterLink, RouterModule, ɵEmptyOutletComponent } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import Swal from 'sweetalert2';
 import { PeticionService } from '../../servicios/peticion.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { HomeAdminComponent } from "../home-admin/home-admin.component";
@@ -12,7 +11,7 @@ import { HomeAdminComponent } from "../home-admin/home-admin.component";
 
 @Component({
   selector: 'app-lugares',
-  imports: [HeaderComponent, FooterComponent, CommonModule, FormsModule, ɵEmptyOutletComponent, RouterModule, HomeAdminComponent],
+  imports: [HeaderComponent, FooterComponent, CommonModule, FormsModule, RouterModule, HomeAdminComponent],
   templateUrl: './lugares.component.html',
   styleUrl: './lugares.component.css'
 })
@@ -20,27 +19,40 @@ export class LugaresComponent implements OnInit {
 
   constructor(private actRoute: ActivatedRoute, private peticion: PeticionService, private cdr: ChangeDetectorRef) { }
 
+  datos: any = {}
+  _id: string = ""
 
 
   ngOnInit(): void {
 
-    this.codigo = this.actRoute.snapshot.params["codigo"]
-    this.iniciar()
+    this.iniciar(this.actRoute.snapshot.params["_id"])
+    this.cargarTodas()
   }
 
   misDatos:any= {}
 
-  iniciar() {
-    let get = {
+  cargarTodas(){
+    let post = {
       host: this.peticion.urlReal,
-      path: "/lugares/cargar/" + this.codigo,
+      path: "/lugares/cargarTodas",
+      payload:{}
     }
-    this.peticion.get(get.host + get.path).then((res: any) => {
-      this.misDatos = res[0]
-          console.log(this.misDatos)
+    this.peticion.get(post.host + post.path).then((res: any) => {
+      console.log(res)
+      this.datos = res.datos.datos
+    })
+  }
 
+  iniciar(identificador: string) {
+    let post = {
+      host: this.peticion.urlReal,
+      path: "/lugares/cargar/" + identificador,
+      payload:{}
+    }
+    this.peticion.get(post.host + post.path).then((res: any) => {
+      console.log(res)
+      this.misDatos = res[0]
       this.cdr.detectChanges();
     })
   }
-  codigo: string = ""
 }

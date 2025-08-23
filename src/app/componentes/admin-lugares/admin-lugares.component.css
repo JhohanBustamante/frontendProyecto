@@ -1,0 +1,33 @@
+div.registro{
+    margin-top: 120px;
+}
+
+div.btnNuevo{
+    position: fixed;
+    bottom: 50vh;
+    right: 10vh;
+}
+
+img.imagen{
+    width: 50px;
+    height: 50px;
+}
+
+div.registro{
+    margin-top: 120px;
+}
+
+div.btnNuevo{
+    position: fixed;
+    bottom: 50vh;
+    right: 10vh;
+}
+
+div.btnNuevo img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background: #06A77D;
+    border-radius: 200px;
+    padding: 10px;
+}
