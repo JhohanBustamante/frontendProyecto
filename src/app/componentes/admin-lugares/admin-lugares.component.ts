@@ -1,7 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { HeaderComponent } from "../header/header.component";
 import { HomeAdminComponent } from "../home-admin/home-admin.component";
-import { FooterComponent } from "../footer/footer.component";
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PeticionService } from '../../servicios/peticion.service';
@@ -12,7 +10,7 @@ declare var $: any
 
 @Component({
   selector: 'app-admin-lugares',
-  imports: [HeaderComponent, HomeAdminComponent, FooterComponent, CommonModule, FormsModule],
+  imports: [ HomeAdminComponent, CommonModule, FormsModule],
   templateUrl: './admin-lugares.component.html',
   styleUrl: './admin-lugares.component.css'
 })
@@ -31,7 +29,7 @@ export class AdminLugaresComponent {
   subtitulo: string = ""
   descripcion: string = ""
   codigo: string = ""
-  lista: any 
+  resumen: any 
   imagen: string = "iconos/anadir-imagen.png"
   imagenSeleccionada !: File
   misDatos:any= {}
@@ -44,14 +42,16 @@ export class AdminLugaresComponent {
     this.cargarEstado()
   }
 
- 
 
+  randomF(){
+    this.random = Math.floor(Math.random() * 8999 + 1000)
+  }
 
   subirImagen(){
     console.log(this.idSeleccionado)
     const post = {
       host: this.peticion.urlReal,
-      path: "/anexos/productos/"+this.idSeleccionado
+      path: "/anexos/productos/" + this.idSeleccionado
     }
     this.peticion.UploadFile(this.imagenSeleccionada, post.host + post.path ).subscribe((res: any)=>{
        if (res.estado == true) {
@@ -61,12 +61,13 @@ export class AdminLugaresComponent {
             icon: "success",
             draggable: true
           });
+          this.randomF()
           $('#aniadirModal').modal('hide')
           this.cargarTodas()
         } else {
           Swal.fire({
-            title: "F",
-            text: res.mensaje,
+            title: "Error",
+            text: res.error,
             icon: "error",
             draggable: true
           });
@@ -75,6 +76,7 @@ export class AdminLugaresComponent {
   }
   onFileSelected(event:any){
     this.imagenSeleccionada = event.target.files[0]
+    this.subirImagen()
   }
 
   cargarEstado() {
@@ -88,7 +90,7 @@ export class AdminLugaresComponent {
           this.nombreIniciado = res.nombre
           this.rolIniciado = res.rol
           if (this.nombreIniciado == undefined || this.nombreIniciado == "") {
-            this.router.navigate(["/inicio"])
+            this.router.navigate(["inicio"])
           }
         })
     }
@@ -102,7 +104,7 @@ export class AdminLugaresComponent {
           subtitulo: this.subtitulo,
           descripcion: this.descripcion,
           codigo: this.codigo,
-          lista: this.lista
+          resumen: this.resumen
         }
       }
       this.peticion.put(post.host + post.path, post.payload).then((res: any) => {
@@ -136,7 +138,7 @@ export class AdminLugaresComponent {
           subtitulo: this.subtitulo,
           descripcion: this.descripcion,
           codigo: this.codigo,
-          lista: this.lista
+          resumen: this.resumen
         }
       }
       this.peticion.delete(post.host + post.path, post.payload).then((res: any) => {
@@ -151,7 +153,7 @@ export class AdminLugaresComponent {
           this.cargarTodas()
         } else {
           Swal.fire({
-            title: "F",
+            title: "Error",
             text: res.mensaje,
             icon: "error",
             draggable: true
@@ -178,7 +180,7 @@ export class AdminLugaresComponent {
           this.titulo = res.datos.datos.titulo
           this.subtitulo = res.datos.datos.subtitulo
           this.descripcion = res.datos.datos.descripcion
-          this.lista = res.datos.datos.lista
+          this.resumen = res.datos.datos.resumen
           this.codigo = res.datos.datos.codigo
         }
       })
@@ -193,7 +195,7 @@ export class AdminLugaresComponent {
           subtitulo: this.subtitulo,
           descripcion: this.descripcion,
           codigo: this.codigo,
-          lista: this.lista,
+          resumen: this.resumen,
           imagen: this.imagen
         }
       }
@@ -223,7 +225,7 @@ export class AdminLugaresComponent {
       this.subtitulo = ""
       this.descripcion = ""
       this.codigo = ""
-      this.lista = {}
+      this.resumen = ""
       this.idSeleccionado = ""
       this.imagen = "iconos/anadir-imagen.png"
     }

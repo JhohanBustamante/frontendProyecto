@@ -89,11 +89,11 @@ export class PeticionService {
     return promesa
   }
 
-   UploadFile(file:File, api:string):Observable<any>{
+  UploadFile(file:File, api:string):Observable<any>{
     const formData = new FormData
     formData.append('file', file)
     return this.http.post(api, formData)
-   }
+  }
 
 }
 

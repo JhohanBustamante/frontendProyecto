@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeAdminComponent } from "../home-admin/home-admin.component";
-import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
 import { PeticionService } from '../../servicios/peticion.service';
 import Swal from 'sweetalert2';
@@ -10,7 +9,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-actualizar-contrasena',
-  imports: [HomeAdminComponent, HeaderComponent, FooterComponent, FormsModule, CommonModule],
+  imports: [HomeAdminComponent, FooterComponent, FormsModule, CommonModule],
   templateUrl: './actualizar-contrasena.component.html',
   styleUrl: './actualizar-contrasena.component.css'
 })

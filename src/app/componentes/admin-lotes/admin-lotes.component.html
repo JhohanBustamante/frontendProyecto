@@ -1,0 +1,130 @@
+<app-home-admin></app-home-admin>
+<div id="encabezado">
+    <h5>Administración de Lotes</h5>
+</div>
+<div class="registro">
+    <main>
+        <div class="container">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Metros cuadrados</th>
+                        <th scope="col">Precio m2</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Lugar</th>
+                        <th scope="col">Imagenes</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <ng-container *ngFor="let item of datos">
+                        <tr (click)="cargar(item._id)">
+                            <td>{{item.titulo}}</td>
+                            <td>{{item.metrosCuadrados}}</td>
+                            <td>{{item.precioMetroCuadrado}}</td>
+                            <td>{{item.precio}}</td>
+
+                                <select class="form-select" aria-label="Default select example" >
+                                <ng-container *ngFor="let element of datosLugar">
+                                <option selected>Seleccionar Lugar</option>
+                                <option value={{element}}>One</option>
+                                                        </ng-container>
+
+                            </select>
+                            <td>
+                                <img src="http://localhost:3000/imagenes/{{item._id}}.png?v={{random}}" class="imagen"
+                                    onerror="this.onerror=null; this.src='http://localhost:4200/iconos/predeterminado.png';">
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+            <div type="button" class="btnNuevo" (click)="agregar()">
+                <img src="iconos/mas.png">
+            </div>
+            <div class="modal fade" id="aniadirModal" tabindex="-1" aria-labelledby="aniadir" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="aniadir">Agregar lugar</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="form-group col-12" *ngIf="idSeleccionado !== '' ">
+                                    <div>
+                                        <img src="http://localhost:3000/imagenes/{{idSeleccionado}}.png?v={{random}}"
+                                            id="imagenPortada" class="col-12"
+                                            onerror="this.onerror=null; this.src='http://localhost:4200/iconos/predeterminado.png';">
+                                        <label for="imagenSubir" id="iconoSubir"><img
+                                                src="http://localhost:4200/iconos/subir.png" alt=""></label>
+                                    </div>
+                                    <input type="file" id="imagenSubir" (change)="onFileSelected($event)">
+                                    <!-- <div class="btn btn-primary" id="botonImagen" (click)="subirImagen()">Subir</div> -->
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="titulo" class="form-label">Título</label>
+                                    <input type="text" class="form-control form-control-sm" id="titulo"
+                                        [(ngModel)]="titulo">
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <label for="metrosCuadrados" class="form-label">Precio metro cuadrado</label>
+                                    <input type="text" class="form-control form-control-sm" id="metrosCuadrados"
+                                        [(ngModel)]="precioMetroCuadrado">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="metrosCuadrados" class="form-label">Metros cuadrados</label>
+                                    <input type="text" class="form-control form-control-sm" id="metrosCuadrados"
+                                        [(ngModel)]="metrosCuadrados">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="metrosCuadrados" class="form-label">Lugar</label>
+                                    <ul class="dropdown-menu">
+                                        <ng-container *ngFor="let item of datos">
+                                            <li><a class="dropdown-item"
+                                                    href="/lugares/{{item._id}}">{{item.titulo}}</a></li>
+                                        </ng-container>
+                                    </ul>
+                                </div>
+
+                                <div class="form-group col-12">
+
+                                    <label for="precioMetroCuadrado" class="form-label"> Descripción</label>
+                                    <textarea type="text" class="form-control form-control-sm" id="precioMetroCuadrado"
+                                        [(ngModel)]="descripcion" rows="6" cols="50"> </textarea>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" (click)="guardar()"
+                                *ngIf="idSeleccionado == ''">Guardar</button>
+                            <button type="button" class="btn btn-danger" (click)="eliminar()"
+                                *ngIf="idSeleccionado !== '' ">Eliminar</button>
+                            <button type="button" class="btn btn-primary" (click)="actualizar()"
+                                *ngIf="idSeleccionado !== '' ">Actualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4" id="listaLugares">
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Lugares
+                    </a>
+                    <ul class="dropdown-menu">
+                        <ng-container *ngFor="let item of datosLugar">
+                            <li><a class="dropdown-item" href="/lugares/{{item._id}}">{{item.titulo}}</a></li>
+                        </ng-container>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>

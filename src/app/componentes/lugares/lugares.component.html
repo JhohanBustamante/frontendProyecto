@@ -24,53 +24,37 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <img src="http://localhost:3000/imagenes/{{misDatos._id}}.png" class="imagen">
-
-            
+        <div class="row" class="imagenPrincipal">
+            <img src="http://localhost:3000/imagenes/{{misDatos._id}}.png" class="imagen img-fluid">
         </div>
         <div class="row">
             <div id="lugarTitulo">
                 <h4 class="subtituloBD">
-                    {{misDatos.subtitulo}}
+                    {{misDatos.titulo}} - {{misDatos.subtitulo}}
                 </h4>
             </div>
             <div class="col-12 descripcionLugar" id="lugarDescripcion">
                 <p class="descripcionBD">
                     {{misDatos.descripcion}}
-                </p> <br><br>
-                <p>
-                    Cualidades:
                 </p>
-                <ul>
-                    <ng-component *ngIf="misDatos.listaUno !=='' ">
-                        <li class="listaUnoBD">
-                            {{misDatos.listaUno}}
-                        </li>
-                    </ng-component>
-                    <li class="listaDosBD" *ngIf="misDatos.listaDos !=='' ">
-                        {{misDatos.listaDos}}
-
-                    </li>
-                    <li class="listaTresBD" *ngIf="misDatos.listaTres !=='' ">
-                        {{misDatos.listaTres}}
-
-                    </li>
-                    <li class="listaCuatroBD" *ngIf="misDatos.listaCuatro !=='' ">
-                        {{misDatos.listaCuatro}}
-
-                    </li>
-                    <ng-component *ngIf="misDatos.listaCinco !== '' ">
-                        <li class="listaCincoBD">
-                            {{misDatos.listaCinco}}
-                        </li>
-                    </ng-component>
-
-                </ul>
             </div>
         </div>
-        <div class="row">
-
+         <div class="row" id="lotesCards">
+            <div id="tituloDos">
+                <h3 id="tituloLotes">Lotes disponibles</h3>
+            </div>
+            <ng-container *ngFor="let item of datos">
+                <div class="col-12 col-md-6 col-lg-4 cartas" id="primerLugar">
+                    <div class="card cardLotes" style="width: 18rem;">
+                        <img src="images/lotes/loteUnoPrimero.jpeg" class="img-fluid" alt="...">
+                        <div class="card-body cuerpoCartaLugar">
+                            <h5>{{item.titulo}}</h5>
+                            <p class="card-text">{{item.resumen}}</p><a routerLink="/lugares/{{item._id}}"
+                                target="_blank"><button type="button" class="btn btn-primary">Conocer</button></a>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </main>

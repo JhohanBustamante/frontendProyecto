@@ -48,7 +48,6 @@ export class InicioComponent {
         this.router.navigate(["registroLugar"])
       }
     })
-
   }
 }
 

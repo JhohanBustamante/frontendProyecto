@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeAdminComponent } from "../home-admin/home-admin.component";
-import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
 import { PeticionService } from '../../servicios/peticion.service';
 import { Router } from '@angular/router';
@@ -10,7 +9,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-mis-datos',
-  imports: [HomeAdminComponent, HeaderComponent, FooterComponent, FormsModule, CommonModule],
+  imports: [HomeAdminComponent, FooterComponent, FormsModule, CommonModule],
   templateUrl: './mis-datos.component.html',
   styleUrl: './mis-datos.component.css'
 })

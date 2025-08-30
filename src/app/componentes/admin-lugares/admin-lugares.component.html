@@ -1,6 +1,5 @@
-<app-header></app-header>
 <app-home-admin></app-home-admin>
-
+<div id="encabezado"><h5>Administración de Lugares</h5></div>
 <div class="registro">
     <main>
         <div class="container">
@@ -10,7 +9,7 @@
                         <th scope="col">Titulo</th>
                         <th scope="col">Subtitulo</th>
                         <th scope="col">Descripción</th>
-                        <th scope="col">Lista</th>
+                        <th scope="col">Resumen</th>
                         <th scope="col">Imagenes</th>
                     </tr>
                 </thead>
@@ -22,10 +21,10 @@
                             <td>{{item.subtitulo}}</td>
                             <td>{{item.descripcion}}</td>
                             <td>
-                            
+                                {{item.resumen}}
                             </td>
                             <td>
-                                <img src="http://localhost:3000/imagenes/{{item._id}}.png?v={{random}}" class="imagen">
+                                <img src="http://localhost:3000/imagenes/{{item._id}}.png?v={{random}}" class="imagen" onerror="this.onerror=null; this.src='http://localhost:4200/iconos/predeterminado.png';">
                             </td>
                         </tr>
                     </ng-container>
@@ -43,32 +42,37 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="form-group col-12">
-                                    <input type="file" (change)="onFileSelected($event)">
-                                    <div class="btn btn-primary" (click)="subirImagen()">Subir</div>
+                                <div class="form-group col-12" *ngIf="idSeleccionado !== '' ">
+                                    <div>
+                                        <img src="http://localhost:3000/imagenes/{{idSeleccionado}}.png?v={{random}}" id="imagenPortada" class="col-12" onerror="this.onerror=null; this.src='http://localhost:4200/iconos/predeterminado.png';">
+                                        <label for="imagenSubir" id="iconoSubir"><img src="http://localhost:4200/iconos/subir.png" alt=""></label>
+                                    </div>
+                                    <input type="file" id="imagenSubir" (change)="onFileSelected($event)">
+                                    <!-- <div class="btn btn-primary" id="botonImagen" (click)="subirImagen()">Subir</div> -->
                                 </div>  
                                 <div class="form-group col-12">
-                                    <label for="titulo" class="form-label">titulo</label>
+                                    <label for="titulo" class="form-label">Título</label>
                                     <input type="text" class="form-control form-control-sm" id="titulo"
                                         [(ngModel)]="titulo">
                                 </div>
 
                                 <div class="form-group col-12">
-                                    <label for="subtitulo" class="form-label">subtitulo</label>
+                                    <label for="subtitulo" class="form-label">Subtitulo</label>
                                     <input type="text" class="form-control form-control-sm" id="subtitulo"
                                         [(ngModel)]="subtitulo">
                                 </div>
 
                                 <div class="form-group col-12">
-                                    <label for="descripcion" class="form-label"> descripcion</label>
-                                    <input type="text" class="form-control form-control-sm" id="descripcion"
-                                        [(ngModel)]="descripcion">
+
+                                    <label for="descripcion" class="form-label"> Descripción</label>
+                                    <textarea type="text" class="form-control form-control-sm" id="descripcion"
+                                        [(ngModel)]="descripcion" rows="6" cols="50"> </textarea>
                                 </div>
 
                                 <div class="form-group col-12">
-                                    <label for="lista" class="form-label"> lista</label>
-                                    <input type="text" class="form-control form-control-sm" id="lista"
-                                        [(ngModel)]="lista">
+                                    <label for="lista" class="form-label"> Resumen</label>
+                                    <textarea type="text" class="form-control form-control-sm" id="lista"
+                                        [(ngModel)]="resumen" rows="3" cols="20"></textarea>   
                                 </div>
 
                             </div>
@@ -87,5 +91,3 @@
         </div>
     </main>
 </div>
-
-<app-footer></app-footer>

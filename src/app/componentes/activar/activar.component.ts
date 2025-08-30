@@ -30,7 +30,7 @@ export class ActivarComponent implements OnInit {
           path: "/usuario/activar",
           payload: {
             correo: this.correo,
-            codigo: this.codigo
+            codigo: this.codigo 
           }
         }
         this.peticion.post(post.host + post.path, post.payload).then((res: any) => {

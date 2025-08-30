@@ -30,7 +30,7 @@
 <main>
     <div class="container">
         <div class="row">
-            <h4> Nuestro propósito  {{"Jhohan" | prueba}}</h4>
+            <h4> Nuestro propósito {{"Jhohan" | prueba}}</h4>
             <p><br>
                 Nuestro objetivo es conectar a compradores, vendedores e inversionistas con oportunidades reales en
                 el mercado
@@ -45,87 +45,22 @@
                 herramientas necesarias para tomar decisiones con total confianza.
             </p>
         </div>
-
         <div class="row" id="lugaresCards">
             <div id="tituloDos">
                 <h3 id="tituloLugares">¿Dónde estamos?</h3>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 cartas" id="primerLugar">
-                <div class="card cardLugares" style="width: 18rem;">
-                    <img src="images/lotes/loteUnoPrimero.jpeg" class="img-fluid" alt="...">
-                    <div class="card-body cuerpoCartaLugar">
-                        <h5>Acacías</h5>
-                        <p class="card-text">Vive rodeado de naturaleza. Lotes campestres con excelente ubicación,
-                            acceso pavimentado y servicios disponibles.</p><a routerLink="/lugares/:acacias"
-                            target="_blank"><button type="button" class="btn btn-primary">Conocer</button></a>
+            <ng-container *ngFor="let item of datos">
+                <div class="col-12 col-md-6 col-lg-4 cartas" id="primerLugar">
+                    <div class="card cardLugares" style="width: 18rem;">
+                        <img src="images/lotes/loteUnoPrimero.jpeg" class="img-fluid" alt="...">
+                        <div class="card-body cuerpoCartaLugar">
+                            <h5>{{item.titulo}}</h5>
+                            <p class="card-text">{{item.resumen}}</p><a routerLink="/lugares/{{item._id}}"
+                                target="_blank"><button type="button" class="btn btn-primary">Conocer</button></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 cartas">
-                <div class="card cardLugares" style="width: 18rem;">
-                    <img src="images/lotes/loteDosPrimero.jpeg" class="img-fluid" alt="...">
-                    <div class="card-body cuerpoCartaLugar">
-                        <h5>Guamal</h5>
-                        <p class="card-text">Invierte en tu futuro con estos exclusivos lotes rurales. Espacios
-                            ideales
-                            para construir la casa de tus sueños.</p><a routerLink="/lugares/:guamal" target="_blank"><button
-                                type="button" class="btn btn-primary">Conocer</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 cartas">
-                <div class="card cardLugares imparCard" style="width: 18rem;">
-                    <img src="images/lotes/loteTresPrimero.jpeg" class="img-fluid" alt="...">
-                    <div class="card-body cuerpoCartaLugar">
-                        <h5>Granada</h5>
-                        <p class="card-text">Aprovecha esta oportunidad única. Lotes en zona de alta valorización
-                            rural, cerca al Meta,
-                            listos para
-                            entrega inmediata. </p><a routerLink="/lugares/:granada" target="_blank"><button type="button"
-                                class="btn btn-primary">Conocer</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 cartas">
-                <div class="card cardLugares" style="width: 18rem;">
-                    <img src="images/lotes/loteCuatroPrimero.jpeg" class="img-fluid" alt="...">
-                    <div class="card-body cuerpoCartaLugar">
-                        <h5>Villavicencio</h5>
-                        <p class="card-text">Tu espacio soñado te espera. Lotes amplios, entorno natural, clima
-                            cálido y
-                            excelente conectividad, cerca a la capital departamental.
-
-                        </p><a routerLink="/lugares/:villavicencio" target="_blank"><button type="button"
-                                class="btn btn-primary">Conocer</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 cartas">
-                <div class="card cardLugares" style="width: 18rem;">
-                    <img src="images/lotes/loteCincoPrimero.jpeg" class="img-fluid" alt="...">
-                    <div class="card-body cuerpoCartaLugar">
-                        <h5>Chichimene</h5>
-                        <p class="card-text">Haz realidad tu proyecto. Lotes rurales a minutos del casco urbano, con
-                            documentación al día
-                            y listo para escriturar.</p><a routerLink="/lugares/:chichimene" target="_blank"><button type="button"
-                                class="btn btn-primary">Conocer</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 cartas">
-                <div class="card cardLugares imparCard" style="width: 18rem;">
-                    <img src="images/lotes/loteSeisPrimero.jpeg" class="img-fluid" alt="...">
-                    <div class="card-body cuerpoCartaLugar">
-                        <h5>Porfía</h5>
-                        <p class="card-text">Invierte con confianza. Terrenos campestres en zona de desarrollo, con
-                            vías de acceso
-                            y proyección turística.
-
-                        </p><a routerLink="/lugares/:porfia" target="_blank"><button type="button"
-                                class="btn btn-primary">Conocer</button></a>
-                    </div>
-                </div>
-            </div>
+            </ng-container>
         </div>
 
         <div class="row">
