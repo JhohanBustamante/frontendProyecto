@@ -1,3 +1,4 @@
+<app-header></app-header>
 <app-home-admin></app-home-admin>
 <div id="encabezado"><h5>Administración de Lugares</h5></div>
 <div class="registro">
@@ -24,7 +25,8 @@
                                 {{item.resumen}}
                             </td>
                             <td>
-                                <img src="http://localhost:3000/imagenes/{{item._id}}.png?v={{random}}" class="imagen" onerror="this.onerror=null; this.src='http://localhost:4200/iconos/predeterminado.png';">
+                                                            <img src="http://localhost:3000/imagenes/{{item._id}}.png?v={{random}}" class="imagen" onerror="this.onerror=null; this.src='http://localhost:4200/iconos/predeterminado.png';">
+
                             </td>
                         </tr>
                     </ng-container>
@@ -63,7 +65,6 @@
                                 </div>
 
                                 <div class="form-group col-12">
-
                                     <label for="descripcion" class="form-label"> Descripción</label>
                                     <textarea type="text" class="form-control form-control-sm" id="descripcion"
                                         [(ngModel)]="descripcion" rows="6" cols="50"> </textarea>
@@ -91,3 +92,5 @@
         </div>
     </main>
 </div>
+
+<app-footer></app-footer>

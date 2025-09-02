@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <app-home-admin></app-home-admin>
 
 <div class="area">
@@ -6,9 +8,9 @@
             <div class="titulo"> Actualizar contraseña </div>
             <div class="row">
                 <div class="form-group col-12 col-md-4 areaDos">
-                    <label for="contra"> Contrasena</label>
+                    <label for="contra"> Contraseña</label>
                     <input type="password" id="contra" class="form-control" aria-describedby="passwordHelpInline" [(ngModel)]="contrasena">
-                    <label for="contra"> Confirmar contrasena</label>
+                    <label for="contra"> Confirmar contraseña</label>
                     <input type="password" id="contraDos" class="form-control" aria-describedby="passwordHelpInline" [(ngModel)]="contrasenaDos">
                     <button type="button" class="btn btn-primary" (click)="cambiarContrasena()">Actualizar</button>
                 </div>

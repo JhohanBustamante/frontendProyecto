@@ -19,7 +19,6 @@ div.btnNuevo{
     margin-bottom: 10px;
     border-radius: 60px;
     border: #003333 solid 5px;
-
 }
 
 #iconoSubir img{
@@ -58,7 +57,7 @@ div.btnNuevo img{
 }
 
 #encabezado {
-    margin-top: 50px;
+    margin-top: 150px;
     display: flex;
     align-items: center;
     justify-content: center;

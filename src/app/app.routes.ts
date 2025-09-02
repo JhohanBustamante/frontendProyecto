@@ -13,6 +13,7 @@ import { MisDatosComponent } from './componentes/mis-datos/mis-datos.component';
 import { ActualizarContrasenaComponent } from './componentes/actualizar-contrasena/actualizar-contrasena.component';
 import { AdminLugaresComponent } from './componentes/admin-lugares/admin-lugares.component';
 import { AdminLotesComponent } from './componentes/admin-lotes/admin-lotes.component';
+import { LotesComponent } from './componentes/lotes/lotes.component';
 
 export const routes: Routes = [
     { path: "activar/:correo/:codigo", component: ActivarComponent, pathMatch: "full" },
@@ -29,5 +30,7 @@ export const routes: Routes = [
     {path: "misDatos", component: MisDatosComponent, pathMatch: "full"},
     {path: "actualizarCont", component: ActualizarContrasenaComponent, pathMatch: "full"},
     {path: "adminLugares", component: AdminLugaresComponent, pathMatch: "full"},
-    {path: "adminLotes", component: AdminLotesComponent, pathMatch: "full"}
+    {path: "adminLotes", component: AdminLotesComponent, pathMatch: "full"},
+    { path: "lotes/:_id", component: LotesComponent, pathMatch: "full" },
+
 ];

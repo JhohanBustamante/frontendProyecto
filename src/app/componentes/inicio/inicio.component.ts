@@ -41,7 +41,6 @@ export class InicioComponent {
       } else {
         Swal.fire({
           title: "Bienvenido",
-          text: res.mensaje,
           icon: "success",
           draggable: true
         });

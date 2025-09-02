@@ -37,7 +37,7 @@ export class RegistroComponent {
     this.peticion.post(post.host + post.path, post.payload).then((res: any) => {
       if (res.estado == false) {
         Swal.fire({
-          title:"Ouch",
+          title:"Error",
           text: res.mensaje,
           icon: "error",
           draggable: true

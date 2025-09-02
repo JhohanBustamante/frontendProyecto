@@ -10,12 +10,12 @@ import { HomeAdminComponent } from "../home-admin/home-admin.component";
 
 
 @Component({
-  selector: 'app-lugares',
+  selector: 'app-lotes',
   imports: [HeaderComponent, FooterComponent, CommonModule, FormsModule, RouterModule, HomeAdminComponent],
-  templateUrl: './lugares.component.html',
-  styleUrl: './lugares.component.css'
+  templateUrl: './lotes.component.html',
+  styleUrl: './lotes.component.css'
 })
-export class LugaresComponent implements OnInit {
+export class LotesComponent implements OnInit {
 
   constructor(private actRoute: ActivatedRoute, private peticion: PeticionService, private cdr: ChangeDetectorRef) { }
 
@@ -27,23 +27,10 @@ export class LugaresComponent implements OnInit {
   ngOnInit(): void {
 
     this.iniciar(this.actRoute.snapshot.params["_id"])
-    this.cargarTodas(this.actRoute.snapshot.params["_id"])
     this.cargarLugares()
   }
 
   misDatos:any= {}
-
-  cargarTodas(lugarId: string){
-    let post = {
-      host: this.peticion.urlReal,
-      path: "/lotes/cargarPorLugar/" + lugarId,
-      payload:{}
-    }
-    this.peticion.get(post.host + post.path).then((res: any) => {
-      this.datos = res.datos.datos
-      console.log(this.datos[0])
-    })
-  }
 
 
   cargarLugares(){
@@ -60,7 +47,7 @@ export class LugaresComponent implements OnInit {
   iniciar(identificador: string) {
     let post = {
       host: this.peticion.urlReal,
-      path: "/lugares/cargar/" + identificador,
+      path: "/lotes/cargar/" + identificador,
       payload:{}
     }
     this.peticion.get(post.host + post.path).then((res: any) => {

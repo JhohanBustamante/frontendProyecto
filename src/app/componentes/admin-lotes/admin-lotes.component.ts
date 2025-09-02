@@ -5,13 +5,14 @@ import Swal from 'sweetalert2';
 import { HomeAdminComponent } from "../home-admin/home-admin.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ɵEmptyOutletComponent } from "../../../../node_modules/@angular/router/router_module.d-Bx9ArA6K";
+import { FooterComponent } from "../footer/footer.component";
+import { HeaderComponent } from "../header/header.component";
 declare var $: any
 
 
 @Component({
   selector: 'app-admin-lotes',
-  imports: [HomeAdminComponent, CommonModule, FormsModule, ɵEmptyOutletComponent],
+  imports: [HomeAdminComponent, CommonModule, FormsModule, FooterComponent, HeaderComponent],
   templateUrl: './admin-lotes.component.html',
   styleUrl: './admin-lotes.component.css'
 })
@@ -31,6 +32,11 @@ export class AdminLotesComponent {
   idSeleccionado: string = ""
   random: number = 1
 
+  titulos: any
+  lugarSeleccionado: string = ""
+
+
+
   titulo: string = ""
   metrosCuadrados: number = 0
   precioMetroCuadrado: number = 0
@@ -49,6 +55,7 @@ export class AdminLotesComponent {
     this.cargarTodas()
     this.cargarTodasLugares()
     this.cargarEstado()
+    this.cargarTitulos()
   }
 
 
@@ -113,7 +120,7 @@ export class AdminLotesComponent {
         precioMetroCuadrado: this.precioMetroCuadrado,
         descripcion: this.descripcion,
         metrosCuadrados: this.metrosCuadrados,
-        lugar: this.lugar,
+        lugar: this.lugarSeleccionado,
         precio: this.precio
       }
     }
@@ -181,12 +188,27 @@ export class AdminLotesComponent {
       }
     }
     this.peticion.get(post.host + post.path).then((res: any) => {
-      if (res.estado = true) {
+      if (res.estado == true) {
         this.titulo = res.datos.datos.titulo
         this.precioMetroCuadrado = res.datos.datos.precioMetroCuadrado
         this.descripcion = res.datos.datos.descripcion
         this.metrosCuadrados = res.datos.datos.metrosCuadrados
         this.lugar = res.datos.datos.lugar
+
+      }
+    })
+  }
+
+  cargarTitulos(){
+    let post = {
+      host: this.peticion.urlReal,
+      path: "/lugares/titulos",
+      payload: {
+      }
+    }
+    this.peticion.get(post.host + post.path).then((res:any)=>{
+      if(res.estado==true){
+        this.titulos = res.valor
       }
     })
   }
@@ -196,19 +218,18 @@ export class AdminLotesComponent {
       host: this.peticion.urlReal,
       path: "/lotes/guardar",
       payload: {
-        _id: this.idSeleccionado,
         titulo: this.titulo,
         precioMetroCuadrado: this.precioMetroCuadrado,
         descripcion: this.descripcion,
         metrosCuadrados: this.metrosCuadrados,
-        lugar: this.lugar
+        lugar: this.lugarSeleccionado
       }
     }
     this.peticion.post(post.host + post.path, post.payload).then((res: any) => {
       if (res.estado == true) {
         Swal.fire({
           title: "Bien",
-          text: "Lugar guardado",
+          text: "Lote guardado",
           icon: "success",
           draggable: true
         });
@@ -216,13 +237,14 @@ export class AdminLotesComponent {
         this.cargarTodas()
       } else {
         Swal.fire({
-          title: "F",
+          title: "Error",
           text: res.mensaje,
           icon: "error",
           draggable: true
         });
       }
     })
+    console.log(post.payload)
   }
 
   limpiar() {
@@ -253,7 +275,6 @@ export class AdminLotesComponent {
       payload:{}
     }
     this.peticion.get(post.host + post.path).then((res: any) => {
-      console.log(res)
       this.datosLugar = res.datos.datos
     })
   }

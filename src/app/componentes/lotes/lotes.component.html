@@ -25,42 +25,30 @@
             </div>
         </div>
         <div class="row" class="imagenPrincipal">
-            <img src="http://localhost:3000/imagenes/{{misDatos._id}}.png" class="imagen img-fluid">
+            <img src="http://localhost:3000/imagenes/{{misDatos._id}}.png" class="imagen img-fluid"
+             onerror="this.onerror=null; this.src='http://localhost:4200/iconos/predeterminado.png';">
         </div>
         <div class="row">
             <div id="lugarTitulo">
                 <h4 class="subtituloBD">
-                    {{misDatos.titulo}} - {{misDatos.subtitulo}}
+                    {{misDatos.lugarNombre}}
                 </h4>
             </div>
             <div class="col-12 descripcionLugar" id="lugarDescripcion">
                 <p class="descripcionBD">
                     {{misDatos.descripcion}}
                 </p>
+                <p>
+                    Valor del metro cuadrado: {{misDatos.precioMetroCuadrado | currency:'COP ':'symbol':'1.0-0' }}
+                </p>
+                <p>
+                    Cantidad de metros cuadrados: {{misDatos.metrosCuadrados | number }}
+                </p>
+                <p>
+                    Precio total: {{misDatos.precio | currency:'COP ':'symbol':'1.0-0'}}
+                </p>
             </div>
         </div>
-         <div class="row" id="lotesCards" *ngIf="datos[0]!==undefined">
-            <div id="tituloDos">
-                <h3 id="tituloLotes">Lotes disponibles</h3>
-            </div>
-            <ng-container *ngFor="let item of datos">
-                <div class="col-12 col-md-6 col-lg-4 cartas" id="primerLugar">
-                    <div class="card cardLotes" style="width: 18rem;">
-                         <img src="http://localhost:3000/imagenes/{{item._id}}.png" class="imagen"
-                                    onerror="this.onerror=null; this.src='http://localhost:4200/iconos/predeterminado.png';">
-                        <div class="card-body cuerpoCartaLugar">
-                            <h5>{{item.titulo}}</h5>
-                            <p class="card-text">{{item.descripcion}}</p><a routerLink="/lotes/{{item._id}}"
-                                target="_blank"><button type="button" class="btn btn-primary">Conocer</button></a>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
-            
-        </div>
-        <div *ngIf="datos[0]==undefined">
-                No hay lotes disponibles en este momento, esperamos no tardar mucho más. Gracias por tu paciencia.
-            </div>
     </div>
 </main>
 

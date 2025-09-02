@@ -16,3 +16,14 @@ div.btnNuevo img{
     border-radius: 200px;
     padding: 10px;
 }
+
+#titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px
+}
+
+#titulo h5 {
+
+}

@@ -73,7 +73,7 @@ export class RegistroLugaresComponent implements OnInit {
         this.cargarTodas()
       } else {
         Swal.fire({
-          title: "F",
+          title: "Error",
           text: res.mensaje,
           icon: "error",
           draggable: true

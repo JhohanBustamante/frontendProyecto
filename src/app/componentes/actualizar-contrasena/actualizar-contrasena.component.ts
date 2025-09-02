@@ -6,10 +6,11 @@ import Swal from 'sweetalert2';
 import { FormsModule } from "@angular/forms";
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-actualizar-contrasena',
-  imports: [HomeAdminComponent, FooterComponent, FormsModule, CommonModule],
+  imports: [HomeAdminComponent, FooterComponent, FormsModule, CommonModule, HeaderComponent],
   templateUrl: './actualizar-contrasena.component.html',
   styleUrl: './actualizar-contrasena.component.css'
 })

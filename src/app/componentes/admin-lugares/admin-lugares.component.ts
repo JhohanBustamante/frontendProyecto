@@ -5,12 +5,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PeticionService } from '../../servicios/peticion.service';
 import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from "../footer/footer.component";
+import { HeaderComponent } from "../header/header.component";
 declare var $: any
 
 
 @Component({
   selector: 'app-admin-lugares',
-  imports: [ HomeAdminComponent, CommonModule, FormsModule],
+  imports: [HomeAdminComponent, CommonModule, FormsModule, FooterComponent, HeaderComponent],
   templateUrl: './admin-lugares.component.html',
   styleUrl: './admin-lugares.component.css'
 })

@@ -30,7 +30,7 @@
 <main>
     <div class="container">
         <div class="row">
-            <h4> Nuestro propósito {{"Jhohan" | prueba}}</h4>
+            <h4> Nuestro propósito</h4>
             <p><br>
                 Nuestro objetivo es conectar a compradores, vendedores e inversionistas con oportunidades reales en
                 el mercado
@@ -52,7 +52,8 @@
             <ng-container *ngFor="let item of datos">
                 <div class="col-12 col-md-6 col-lg-4 cartas" id="primerLugar">
                     <div class="card cardLugares" style="width: 18rem;">
-                        <img src="images/lotes/loteUnoPrimero.jpeg" class="img-fluid" alt="...">
+                        <img src="http://localhost:3000/imagenes/{{item._id}}.png" class="imagen"
+                                    onerror="this.onerror=null; this.src='http://localhost:4200/iconos/predeterminado.png';">
                         <div class="card-body cuerpoCartaLugar">
                             <h5>{{item.titulo}}</h5>
                             <p class="card-text">{{item.resumen}}</p><a routerLink="/lugares/{{item._id}}"
